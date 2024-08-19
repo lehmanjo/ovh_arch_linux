@@ -40,6 +40,11 @@
 - systemctl enable systemd-networkd.service
 - pacman -S linux-firmware grub
 - grub-mkconfig -o /boot/grub/grub.cfg
+- exit to Ubuntu
+- genfstab -U /new >> /new/etc/fstab
+- sync
+- reboot
+- 
   
 # ovh_arch_linux
 byolinux image for OVH
