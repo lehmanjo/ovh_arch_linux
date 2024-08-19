@@ -8,6 +8,9 @@
 - Initialize pacman
 - pacman-key --init
 - pacman-key --populate
+> cat >> /etc/pacman.d/mirrorlist
+> 
+> Server = https://geo.mirror.pkgbuild.com/$repo/os/$arch
 - pacman -Syyu
 - Install Software
 - pacman -S base linux linux-firmware grub2 vim openssh
@@ -15,11 +18,6 @@
 - useradd -u 1028 -g 984 -h /home/you you
 - passwd you
 - passwd root
->  
-> cat >> /etc/pacman.d/mirrorlist
-> 
-> Server = https://geo.mirror.pkgbuild.com/$repo/os/$arch
->
   
 # ovh_arch_linux
 byolinux image for OVH
