@@ -15,7 +15,7 @@
 - Install Software
 - pacman -S base linux linux-firmware grub vim openssh
 - Add user
-- useradd -u 1028 -g 984 -h /home/you you
+- useradd -u 1028 -g 984 -d /home/you you
 - passwd you
 - passwd root
   
