@@ -16,7 +16,7 @@
 > Server = https://geo.mirror.pkgbuild.com/$repo/os/$arch
 - pacman -Syyu
 - Install Software
-- pacman -S base linux linux-firmware grub vim openssh
+- pacman -S base linux linux-firmware grub vim openssh efibootmgr
 - Add user
 - useradd -u 1028 -g 984 -m -d /home/you you
 - passwd you
@@ -41,7 +41,7 @@
 > Gateway=192.99.44.254
 > DNS=1.1.1.1
 - systemctl enable systemd-networkd.service
-- pacman -S linux-firmware grub
+- pacman -S linux-firmware grub efibootmgr
 - grub-mkconfig -o /boot/grub/grub.cfg
 - exit to Ubuntu
 - genfstab -U /new >> /new/etc/fstab
