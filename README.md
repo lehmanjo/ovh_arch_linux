@@ -13,7 +13,7 @@
 > Server = https://geo.mirror.pkgbuild.com/$repo/os/$arch
 - pacman -Syyu
 - Install Software
-- pacman -S base linux linux-firmware grub2 vim openssh
+- pacman -S base linux linux-firmware grub vim openssh
 - Add user
 - useradd -u 1028 -g 984 -h /home/you you
 - passwd you
