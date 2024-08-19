@@ -15,9 +15,17 @@
 - Install Software
 - pacman -S base linux linux-firmware grub vim openssh
 - Add user
-- useradd -u 1028 -g 984 -d /home/you you
+- useradd -u 1028 -g 984 -m -d /home/you you
 - passwd you
 - passwd root
+- systemctl enable sshd
+- su - you
+- mkdir ~/.ssh
+- chmod 0700 ~/.ssh
+- cat > ~/.ssh/authorized_keys
+- chmod 0600 ~/.ssh/authorized_keys
+- 
+
   
 # ovh_arch_linux
 byolinux image for OVH
