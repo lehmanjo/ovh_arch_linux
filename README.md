@@ -45,6 +45,8 @@
 - grub-mkconfig -o /boot/grub/grub.cfg
 - exit to Ubuntu
 - genfstab -U /new >> /new/etc/fstab
+- cd /boot;rm -fr *
+- cp -rp /new/boot/* /boot
 - sync
 - reboot
 - 
