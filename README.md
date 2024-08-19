@@ -3,6 +3,7 @@
 - install Ubuntu 24 server with a /new 64GB partition (EXT4)
 - https://wiki.archlinux.org/title/Install_Arch_Linux_from_existing_Linux#From_a_host_running_another_Linux_distribution
 - https://wiki.archlinux.org/title/Installation_guide#Install_essential_packages
+- https://wiki.archlinux.org/title/GRUB
 
   
 - Download boostrap ISO from https://geo.mirror.pkgbuild.com/iso/
