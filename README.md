@@ -2,6 +2,9 @@
 
 - install Ubuntu 24 server with a /new 64GB partition (EXT4)
 - https://wiki.archlinux.org/title/Install_Arch_Linux_from_existing_Linux#From_a_host_running_another_Linux_distribution
+- https://wiki.archlinux.org/title/Installation_guide#Install_essential_packages
+
+  
 - Download boostrap ISO from https://geo.mirror.pkgbuild.com/iso/
 - Extract: cd /new; tar xf /path-to-bootstrap-image/archlinux-bootstrap-x86_64.tar.zst --numeric-owner; mv <extracted directory>/* .; rmdir <extracted directory>
 - Chroot: /new/bin/arch-chroot /new
