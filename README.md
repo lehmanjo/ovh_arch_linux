@@ -24,7 +24,20 @@
 - chmod 0700 ~/.ssh
 - cat > ~/.ssh/authorized_keys
 - chmod 0600 ~/.ssh/authorized_keys
-- 
+- exit (back to root)
+- ln -sf /usr/share/zoneinfo/Hongkong /etc/localtime
+- hwclock --systohc
+- echo ovh01 > /etc/hostname
+- locale-gen
+> cat /etc/systemd/network/20-wired.network
+> [Match]
+> Name=eno1
+> 
+> [Network]
+> Address=192.99.44.130/24
+> Gateway=192.99.44.254
+> DNS=1.1.1.1
+- systemctl enable systemd-networkd.service
 
   
 # ovh_arch_linux
