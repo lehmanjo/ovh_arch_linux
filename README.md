@@ -1,3 +1,10 @@
+# OVH Arch Linux
+
+- install Ubuntu 24 server with a /new 64GB partition (EXT4)
+- 
+
+
+
 # ovh_arch_linux
 byolinux image for OVH
 
