@@ -4,7 +4,7 @@
 - https://wiki.archlinux.org/title/Install_Arch_Linux_from_existing_Linux#From_a_host_running_another_Linux_distribution
 - Download boostrap ISO from https://geo.mirror.pkgbuild.com/iso/
 - Extract: cd /new; tar xf /path-to-bootstrap-image/archlinux-bootstrap-x86_64.tar.zst --numeric-owner; mv <extracted directory>/* .; rmdir <extracted directory>
-- Chroot: /new/root.x86_64/bin/arch-chroot /new
+- Chroot: /new/bin/arch-chroot /new
 - Initialize pacman
 - pacman-key --init
 - pacman-key --populate
