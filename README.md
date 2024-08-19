@@ -38,7 +38,8 @@
 > Gateway=192.99.44.254
 > DNS=1.1.1.1
 - systemctl enable systemd-networkd.service
-
+- pacman -S linux-firmware grub
+- grub-mkconfig -o /boot/grub/grub.cfg
   
 # ovh_arch_linux
 byolinux image for OVH
