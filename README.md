@@ -4,6 +4,12 @@
 - https://wiki.archlinux.org/title/Install_Arch_Linux_from_existing_Linux#From_a_host_running_another_Linux_distribution
 - https://wiki.archlinux.org/title/Installation_guide#Install_essential_packages
 - https://wiki.archlinux.org/title/GRUB
+- https://bbs.archlinux.org/viewtopic.php?id=269955 (virt-customize)
+- https://gitlab.archlinux.org/archlinux/arch-boxes/
+- https://cloud-init.io/
+- https://libguestfs.org/virt-customize.1.html
+- https://wiki.archlinux.org/title/Dhcpcd
+
 
   
 - Download boostrap ISO from https://geo.mirror.pkgbuild.com/iso/
