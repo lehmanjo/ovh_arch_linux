@@ -97,10 +97,33 @@ drwx------ 2 root root 12288 Aug 24 09:50 lost+found
 ls -l /mnt/ovhmd1
 total 16
 drwx------ 2 root root 16384 Aug 24 09:50 lost+found
-
-
-
 ```
+
+rsync options
+```
+rsync -avzHXShP
+
+-a -> -rlptgoD (no -H,-A,-X)
+-r recurse
+-l copy symlinks
+-p preseve perms
+-t preserve times
+-g preserve group
+-o preserve owner
+-D -> --devices --specials
+--devices preserve device files
+--specials preserve special files
+-v verbose
+-z compress
+-H preserve hard links
+-X preserve extended attributes
+-S handle sparse files
+-h human readable output
+-P -> --partial --progress
+--partial keep partially transferred files
+--progress show progress during transfer
+```
+
 
 # OVH Arch Linux
 
