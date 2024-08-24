@@ -127,7 +127,7 @@ rsync -avzHXShP
 Copy
 ```
 rsync -avzHXShP --exclude "/boot" /mnt/ovhimg/* /mnt/ovhmd1
-rsync -avzHXShP /mnt/ovhimg/boot /mnt/ovhmd0
+rsync -avzHXShP /mnt/ovhimg/boot/* /mnt/ovhmd0
 ```
 
 Unmount image
@@ -146,6 +146,27 @@ total 13
 drwxr-xr-x 3 root root  1024 Aug 15 20:04 boot
 drwx------ 2 root root 12288 Aug 24 09:50 lost+found
 ```
+
+Chroot 
+```
+arch-chroot /mnt/ovhmd1/
+
+# Misc stuff
+useradd -u 1028 -g 984 -m -s /bin/bash -d /home/me me
+passwd -d root
+yes mypass | passwd me
+ New password: Retype new password: passwd: password updated successfully
+
+
+# Network
+
+
+# Grub
+
+
+
+```
+
 
 
 # OVH Arch Linux
