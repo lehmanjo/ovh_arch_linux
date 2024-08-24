@@ -124,6 +124,11 @@ rsync -avzHXShP
 --progress show progress during transfer
 ```
 
+Copy
+```
+rsync -avzHXShP --exclude={"/boot","/lost+found"} /mnt/ovhimg /mnt/ovhmd1
+rsync -avzHXShP --include={"/boot","/boot"} /mnt/ovhimg /mnt/ovhmd0
+```
 
 # OVH Arch Linux
 
