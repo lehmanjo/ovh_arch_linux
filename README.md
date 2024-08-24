@@ -57,10 +57,50 @@ ovhd1p2    1050624   3147775   2097152    1G Linux swap
 ovhd1p3    3147776 134217694 131069919 62.5G Linux RAID
 ```
 
-Start Qemu
+Blah
 ```
+modprobe nbd
+qemu-nbd -f raw -c /dev/nbd0 ovhd1
+qemu-nbd -f raw -c /dev/nbd1 ovhd2
+qemu-nbd -c /dev/nbd2 Arch-Linux-x86_64-basic.qcow2
+mkdir /mnt/ovhd1
+mkdir /mnt/ovhd2
+mkdir /mnt/ovhimg
+mount /dev/nbd2p3 /mnt/ovhimg
 ```
 
+Raid-1
+```
+mdadm --create --verbose /dev/md0 --level=1 --metadata=0.90 --raid-devices=2 /dev/nbd0p1 /dev/nbd1p1
+mdadm --create --verbose /dev/md1 --level=1 --metadata=0.90 --raid-devices=2 /dev/nbd0p3 /dev/nbd1p3
+cat /proc/mdstat
+Personalities : [raid1]
+md1 : active raid1 nbd1p3[1] nbd0p3[0]
+      65534848 blocks [2/2] [UU]
+      [=======>.............]  resync = 35.9% (23539008/65534848) finish=3.4min speed=201914K/sec
+
+md0 : active raid1 nbd1p1[1] nbd0p1[0]
+      524224 blocks [2/2] [UU]
+```
+
+Format and Mount
+```
+mkfs.ext4 /dev/md0
+mkfs.ext4 /dev/md1
+mkdir /mnt/ovhmd0
+mkdir /mnt/ovhmd1
+mount /dev/md0 /mnt/ovhmd0
+mount /dev/md1 /mnt/ovhmd1
+ls -l /mnt/ovhmd0
+total 12
+drwx------ 2 root root 12288 Aug 24 09:50 lost+found
+ls -l /mnt/ovhmd1
+total 16
+drwx------ 2 root root 16384 Aug 24 09:50 lost+found
+
+
+
+```
 
 # OVH Arch Linux
 
