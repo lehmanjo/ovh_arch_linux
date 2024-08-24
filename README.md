@@ -1,5 +1,6 @@
 # Qemu prep
 
+Create raw image files for QEMU
 ```
 #!/bin/bash
 
@@ -55,6 +56,11 @@ ovhd1p1       2048   1050623   1048576  512M Linux RAID
 ovhd1p2    1050624   3147775   2097152    1G Linux swap
 ovhd1p3    3147776 134217694 131069919 62.5G Linux RAID
 ```
+
+Start Qemu
+```
+```
+
 
 # OVH Arch Linux
 
