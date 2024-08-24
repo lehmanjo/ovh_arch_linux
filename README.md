@@ -3,7 +3,7 @@
 ```
 #!/bin/bash
 
-DISKS=(ovh_disk1.img 64G ovh_disk2.img 64G)
+DISKS=(ovhd1 64G ovhd2 64G)
 
 for (( i=0; i < ${#DISKS[@]}; i+=2 ))
 do
@@ -23,37 +23,37 @@ Partition template
 $ cat disk.img.template
 label: gpt
 label-id: 929C7D56-D01B-D745-AC84-3C33C12E3738
-device: ovh_disk1.img
+device: ovhd
 unit: sectors
 first-lba: 2048
 last-lba: 134217694
 sector-size: 512
 
-ovh_disk1.img1 : start=        2048, size=     1048576, type=A19D880F-05FC-4D3B-A006-743F0F84911E, uuid=E75EE1B3-FA45-8E45-AF3C-44641EF9EC04
-ovh_disk1.img2 : start=     1050624, size=     2097152, type=0657FD6D-A4AB-43C4-84E5-0933C84B4F4F, uuid=9F906375-36CA-4D48-81E7-D1EE70006419
-ovh_disk1.img3 : start=     3147776, size=   131069919, type=A19D880F-05FC-4D3B-A006-743F0F84911E, uuid=DC108A8A-F52B-664E-95B8-4679BED815AD
+p1 : start=        2048, size=     1048576, type=A19D880F-05FC-4D3B-A006-743F0F84911E, uuid=E75EE1B3-FA45-8E45-AF3C-44641EF9EC04
+p2 : start=     1050624, size=     2097152, type=0657FD6D-A4AB-43C4-84E5-0933C84B4F4F, uuid=9F906375-36CA-4D48-81E7-D1EE70006419
+p3 : start=     3147776, size=   131069919, type=A19D880F-05FC-4D3B-A006-743F0F84911E, uuid=DC108A8A-F52B-664E-95B8-4679BED815AD
 ```
 
 Apply partitioning
 ```
-sfdisk ovh_disk1.img < disk.img.template
-sfdisk ovh_disk2.img < disk.img.template
+sfdisk ovhd1 < disk.img.template
+sfdisk ovhd2 < disk.img.template
 ```
 
 Check partition
 ```
-fdisk -l ovh_disk1.img
-Disk ovh_disk1.img: 64 GiB, 68719476736 bytes, 134217728 sectors
+$ fdisk -l ovhd1
+Disk ovhd1: 64 GiB, 68719476736 bytes, 134217728 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 Disklabel type: gpt
 Disk identifier: 929C7D56-D01B-D745-AC84-3C33C12E3738
 
-Device           Start       End   Sectors  Size Type
-ovh_disk1.img1    2048   1050623   1048576  512M Linux RAID
-ovh_disk1.img2 1050624   3147775   2097152    1G Linux swap
-ovh_disk1.img3 3147776 134217694 131069919 62.5G Linux RAID
+Device       Start       End   Sectors  Size Type
+ovhd1p1       2048   1050623   1048576  512M Linux RAID
+ovhd1p2    1050624   3147775   2097152    1G Linux swap
+ovhd1p3    3147776 134217694 131069919 62.5G Linux RAID
 ```
 
 # OVH Arch Linux
