@@ -126,9 +126,27 @@ rsync -avzHXShP
 
 Copy
 ```
-rsync -avzHXShP --exclude={"/boot","/lost+found"} /mnt/ovhimg /mnt/ovhmd1
-rsync -avzHXShP --include={"/boot","/boot"} /mnt/ovhimg /mnt/ovhmd0
+rsync -avzHXShP --exclude "/boot" /mnt/ovhimg/* /mnt/ovhmd1
+rsync -avzHXShP /mnt/ovhimg/boot /mnt/ovhmd0
 ```
+
+Unmount image
+```
+umount /mnt/ovhimg
+qemu-nbd -d /dev/nbd2
+```
+
+Remount /boot
+```
+umount /mnt/ovhmd0
+mkdir /mnt/ovhmd1/boot
+mount /dev/md0 /mnt/ovhmd1/boot
+ls -l /mnt/ovhmd1/boot/
+total 13
+drwxr-xr-x 3 root root  1024 Aug 15 20:04 boot
+drwx------ 2 root root 12288 Aug 24 09:50 lost+found
+```
+
 
 # OVH Arch Linux
 
