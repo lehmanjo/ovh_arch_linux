@@ -1,3 +1,8 @@
+# There is nothing useful here. 
+Installed ArchLinux on OVH with software RAID but had to use remote console (KVM).
+
+
+
 # Qemu prep
 
 Create raw image files for QEMU
